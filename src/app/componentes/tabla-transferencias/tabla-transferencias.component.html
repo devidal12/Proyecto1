@@ -1,0 +1,18 @@
+<table class="table table-striped table-bordered">
+    <thead class="table-primary">
+        <tr>
+            <th>Concepto</th>
+            <th>Importe</th>
+            <th>Fecha</th>
+            
+        </tr>
+    </thead>
+    <tbody >
+        <tr [routerLink]="'/pages/detalles/'+transferencia.id" *ngFor="let transferencia of transferencias" class="cursor-pointer">
+                <td>{{transferencia.concepto}}</td>
+                <td>{{transferencia.importe | currency: 'EUR'}}</td>
+                <td>{{transferencia.fecha | date: 'shortDate' }}</td>
+                
+        </tr>
+    </tbody>
+</table>

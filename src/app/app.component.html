@@ -1,0 +1,23 @@
+<nav class="main-menu nav justify-content-between">
+  <ul>
+    <li><a routerLink="/pages/dashboard">Inicio</a></li>
+    <li><a routerLink="/pages/perfil">Mi Perfil</a></li>
+    <li><a routerLink="/pages/saldo">Saldo actual</a></li>
+    <li class="dropdow-menu">
+      <p>Transferencias</p>
+      <ul class="submenu">
+        <li><a routerLinkActive="active-menu" routerLink="/pages/nueva-transferencia">Nueva transferencia</a></li>
+        <li><a routerLink="/pages/transferencias-enviadas">Enviadas</a></li>
+        <li><a routerLink="/pages/transferencias-recibidas">Recibidas</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><a routerLink="/auth/login">Iniciar sesión</a></li>
+  </ul>
+</nav>
+
+<h3>¡Bienvenido de nuevo, {{miUsuario.nombre}}!</h3>
+<div >
+  <router-outlet></router-outlet>
+</div>

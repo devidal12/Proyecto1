@@ -1,0 +1,20 @@
+h3 {
+    color: black;
+}
+
+.card {
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+.perfil {
+    display: flex;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: solid 
+
+}

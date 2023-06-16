@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordered">
+    <thead class="table-primary">
+        <tr>
+            <th>Concepto</th>
+            <th>Importe</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Receptor</th>
+            <th>Banco</th>
+            <th>Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="fila-tabla" *ngFor="let transferencia of transferencias" >
+            <td>{{transferencia.concepto}}</td>
+            <td>{{transferencia.importe | currency: 'EUR'}}</td>
+            <td>{{transferencia.fecha | date: 'shortDate' }}</td>
+            <td>{{transferencia.fecha | date: 'shortTime' }}</td>
+            <td>{{transferencia.receptor}}</td>
+            <td>{{transferencia.bancor}}</td>
+            <td>{{transferencia.tipo}}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/pages/transferencias-enviadas">Volver</button>
+
+

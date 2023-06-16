@@ -1,0 +1,25 @@
+
+
+.sesion {
+    display: grid;
+    justify-content: center;
+    width: 500px;
+    height: 300px;
+    margin-left: 8rem  ;
+    margin-bottom: 2rem;
+    padding-top: 10px;
+}
+input {
+    margin-top: 10px;
+    
+}
+input:hover{
+    border-color: brown;
+    background-color: lightgray;
+
+}
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-self: center;
+}
