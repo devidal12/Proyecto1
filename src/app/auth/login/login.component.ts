@@ -25,4 +25,24 @@ export class LoginComponent {
       console.error("Credenciales incorrectas")
     }
   }
+
+  enviarLogin(){
+    this.clienteService.login(this.email, this.password).subscribe(
+      (cliente) => {
+        console.log({cliente});
+        if(cliente){
+          this.clienteService.crearSesion(cliente)
+          this.router.navigateByUrl("/pages/dashboard")
+        } else {
+          console.error("Login incorrecto")
+        }
+      },
+      (error) => {
+        console.log({error})
+      }
+      );
+
+  }
+
+
 }

@@ -1,6 +1,16 @@
+<div class="container">
+  <div class="d-flex justify-content-between ">
+    <h1 class="outlined-text font-weight-bold">Banco Peregrino</h1>
+    <p class="outlined-text font-weight-bold"> Nuestras comisiones te meten un buen pepino</p>
+  </div>
+</div>
+<hr>
+
 <nav class="main-menu nav justify-content-between">
   <ul>
-    <li><a routerLink="/pages/dashboard">Inicio</a></li>
+    <li><a routerLink="/pages/dashboard">
+      <mat-icon>home</mat-icon>
+    </a></li>
     <li><a routerLink="/pages/perfil">Mi Perfil</a></li>
     <li><a routerLink="/pages/saldo">Saldo actual</a></li>
     <li class="dropdow-menu">
@@ -14,10 +24,13 @@
   </ul>
   <ul>
     <li><a routerLink="/auth/login">Iniciar sesión</a></li>
+    <li class="cerrarSesion" (click)="cerrarSesion()">
+      <a routerLink="/auth/login">
+        Cerrar sesión
+      </a></li>
   </ul>
 </nav>
 
-<h3>¡Bienvenido de nuevo, {{miUsuario.nombre}}!</h3>
 <div >
   <router-outlet></router-outlet>
 </div>

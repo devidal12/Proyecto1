@@ -4,14 +4,14 @@
     --color-background: #0d6efd;
     --color-shade-dark: rgba(0, 0, 0, 0.1);
     --color-shade-light: rgba(255, 255, 255, 0.1);
-    /* background-image: url(https://th.bing.com/th/id/OIP.fUNoeVGNsqO4Az8Vc5cZ3QHaE8?pid=ImgDet&rs=1); */
+    font-family: 'Noto Serif';
 }
 
 html {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-family: monospace;
-    font-size: 22px;
+    background-image: url('https://th.bing.com/th/id/OIP.bhPpgNhti9ZlxUe731oMQQHaE8?pid=ImgDet&rs=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     
 }
 
@@ -33,12 +33,9 @@ body {
     margin-top: 2rem;
     padding: 1rem;
     
+    
 }
 
-
-li {
-    margin-bottom: 1rem;
-}
 
 a {
     color: var(--color-primary);
@@ -61,3 +58,7 @@ a {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+
+html, body { height: 100%; }
+

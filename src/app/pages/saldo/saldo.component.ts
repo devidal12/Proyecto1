@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { clientes } from 'src/app/datos/usuario-ejemplo';
+import { ClienteService } from 'src/app/services/cliente/cliente.service';
 
 @Component({
   selector: 'app-saldo',
@@ -8,4 +9,15 @@ import { clientes } from 'src/app/datos/usuario-ejemplo';
 })
 export class SaldoComponent {
   usuario: any = clientes[1]
+
+
+  cliente: any = null;
+
+  constructor(private clienteService: ClienteService){
+  }
+
+  ngOnInit():void {
+
+    this.cliente = this.clienteService.leerSesion();
+  }
 }

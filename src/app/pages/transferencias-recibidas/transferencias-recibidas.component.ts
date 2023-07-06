@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { transferenciasRecibidas } from 'src/app/datos/tranferencia-ejemplo';
+import { ClienteService } from 'src/app/services/cliente/cliente.service';
+import { TransferenciaService } from 'src/app/services/transferencias/transferencia.service';
 
 @Component({
   selector: 'app-transferencias-recibidas',
@@ -8,6 +9,31 @@ import { transferenciasRecibidas } from 'src/app/datos/tranferencia-ejemplo';
 })
 export class TransferenciasRecibidasComponent {
 
-  transferencias: any[] = transferenciasRecibidas;
+  transferencias: any[] = [];
+
+  cliente : any;
+
+  constructor(private transferenciaService : TransferenciaService, private clienteService: ClienteService){
+  }
+
+  ngOnInit(){
+      this.cliente = this.clienteService.leerSesion();
+      if(this.cliente != null) {
+        this.cargarTransferenciasPorIdBeneficiario()
+      } else { console.log("No has iniciado sesión")}
+  }
+
+  cargarTransferencias(){
+    this.transferenciaService.obtenerTransferencias().subscribe((transferencias: any) => {
+      console.log({transferencias});
+      this.transferencias = transferencias;
+    });
+  }
+  cargarTransferenciasPorIdBeneficiario(){
+    this.transferenciaService.obtenerTransferenciasPorIdBeneficiario(this.cliente.id).subscribe((transferencias: any) => {
+      console.log({transferencias});
+      this.transferencias = transferencias;
+    });
+  }
 
 }

@@ -5,20 +5,18 @@
             <th>Importe</th>
             <th>Fecha</th>
             <th>Hora</th>
+            <th>Ordenante</th>
             <th>Receptor</th>
-            <th>Banco</th>
-            <th>Tipo</th>
         </tr>
     </thead>
     <tbody>
-        <tr class="fila-tabla" *ngFor="let transferencia of transferencias" >
-            <td>{{transferencia.concepto}}</td>
-            <td>{{transferencia.importe | currency: 'EUR'}}</td>
-            <td>{{transferencia.fecha | date: 'shortDate' }}</td>
-            <td>{{transferencia.fecha | date: 'shortTime' }}</td>
-            <td>{{transferencia.receptor}}</td>
-            <td>{{transferencia.bancor}}</td>
-            <td>{{transferencia.tipo}}</td>
+        <tr *ngIf="transferencias" >
+            <td>{{transferencias.concepto}}</td>
+            <td>{{transferencias.importe | currency: 'EUR'}}</td>
+            <td>{{transferencias.fecha | date: 'shortDate' }}</td>
+            <td>{{transferencias.fecha | date: 'shortTime' }}</td>
+            <td>{{transferencias.ordenante.usuario}}</td>
+            <td>{{transferencias.beneficiario.usuario}}</td>
         </tr>
     </tbody>
 </table>

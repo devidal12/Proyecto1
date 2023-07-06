@@ -34,4 +34,14 @@ h3{
     background-color: white;
 }
 
+.cerrarSesion {
+    text-decoration: underline;
+}
+
+
+
+.outlined-text {
+    text-shadow: 2px 2px 4px #0199ff;
+    padding: 10px;
+}
 

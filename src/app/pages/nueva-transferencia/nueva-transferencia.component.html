@@ -1,10 +1,10 @@
 <h4>Nueva transferencia</h4>
 <hr>
 <div class="container">
-    <input  placeholder="Beneficiario" type ="text">
-    <input  placeholder="Importe" type ="number">
-    <input  placeholder="Concepto" type ="text">
+    <input  [(ngModel)]="nuevaTransferencia.beneficiario.id" placeholder="Beneficiario" type ="text">
+    <input  [(ngModel)]="nuevaTransferencia.importe" placeholder="Importe" type ="number">
+    <input  [(ngModel)]="nuevaTransferencia.concepto"  placeholder="Concepto" type ="text">
 </div>
 <div class="button">
-    <button class="btn btn-primary">Enviar</button>
+    <button (click)="enviarTransferencia()" class="btn btn-primary">Enviar</button>
 </div>
